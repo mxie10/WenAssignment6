@@ -1,0 +1,84 @@
+/* .htmlDemoContainer {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+} */
+
+.homeContainer {
+    /* background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); */
+    
+    min-height: 100vh;
+}
+
+.bodyContainer {
+    margin-top: 22px;
+}
+
+/* .aboutContainer {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+    height: 100vh;
+}
+
+.addStudentContainer {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+    height: 100vh;
+} */
+
+body {
+    font-family: 'Crimson Text', serif;
+}
+
+body > nav {
+    background-color:sienna;
+}
+
+
+.table_htmlDemo {
+    width: 100%;
+    background-color: white;
+    margin: 0 auto; 
+    border-collapse: collapse; 
+    border: 1px solid #000;
+}
+
+.table_htmlDemo caption {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px;
+    color:white;
+}
+
+.table_htmlDemo th {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+.table_htmlDemo td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.table_htmlDemo tfoot {
+    font-weight: bold;
+}
+
+.table_htmlDemo {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.peronalInfoContainer {
+    width:100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.nav-item {
+    border-radius: 5px;
+}
+
+.nav-item:hover {
+    background-color: darkgrey;
+}
+

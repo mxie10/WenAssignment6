@@ -1,0 +1,101 @@
+<div class="row">
+    <main class="col-md-12"><br>
+        <h2>{{student.firstName}} {{student.lastName}} - Student: {{student.studentNum}}</h2>
+        <hr />
+        <form method="post" action="/student/update">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input hidden ="form-control" id="studentNum" name="studentNum" type="text" value="{{student.studentNum}}">
+                        <div class="mb-3"><label for="firstName" class="form-label">First Name:</label>
+                            <input class="form-control" id="firstName" name="firstName" type="text"
+                                value="{{student.firstName}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label for="lastName" class="form-label">Last Name:</label>
+                            <input class="form-control" id="lastName" name="lastName" type="text"
+                                value="{{student.lastName}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control" id="email" name="email" type="text" value="{{student.email}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Address (Street):</label>
+                            <input type="text" class="form-control" name="addressStreet"
+                                value="{{student.addressStreet}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Address (City):</label>
+                            <input type="text" class="form-control" name="addressCity"
+                                value="{{student.addressCity}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Address (Province):</label>
+                            <input type="text" class="form-control" name="addressProvince"
+                                value="{{student.addressProvince}}" />
+                        </div>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Academic Information</legend>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="mb-2">College Employment:</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="ta" name="ta" {{#if student.TA}}checked{{/if}}>
+                                <label class="form-check-label" for="ta">Teaching Assistant</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label">Enrollment Status:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="fullTime" value="Full Time"
+                                        name="status" {{#equal student.status "Full Time" }}checked{{/equal}}>
+                                    <label class="form-check-label" for="fullTime">Full Time</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="partTime" value="Part Time"
+                                        name="status" {{#equal student.status "Part Time" }}checked{{/equal}}>
+                                    <label class="form-check-label" for="partTime">Part Time</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label">Enrolled in Course:</label>
+                                {{#if courses}}
+                                    <select class="form-select" name="course" id="course">
+                                        <option value="">Select Course</option>
+                                        {{#each courses}}
+                                            <option value="{{courseId}}" {{#if selected}} selected {{/if}} >
+                                                {{courseCode}} 
+                                            </option>{{/each}}
+                                    </select>{{else}}
+                                    <div>No Courses</div>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <hr><button type="submit" class="btn btn-primary float-end">Update Student</button>
+        </form>
+    </main>
+</div>
